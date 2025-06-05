@@ -21,7 +21,7 @@ danisman_adi = st.text_input("Danışman Adı", placeholder="Örn: Semih ÖZBİL
 gunluk_ucret_dolar = st.number_input(
     f"{danisman_adi if danisman_adi else 'Danışman'} için 1 Adam/Günlük Anlaşılan Dolar Ücreti ($)",
     min_value=0.0,
-    value=500.0, # Varsayılan değer
+    value=250.0, # Varsayılan değer
     step=10.0,
     format="%.2f",
     help="Danışmanın bir tam gün (7.5 saat) için aldığı dolar ücreti."
@@ -40,7 +40,7 @@ st.header("2. Kur Bilgisi")
 dolar_kuru_tl = st.number_input(
     "Güncel Dolar Kuru (TL)",
     min_value=0.0,
-    value=32.50, # Varsayılan değer (güncel kura göre güncelleyebilirsiniz)
+    value=39.34, # Varsayılan değer (güncel kura göre güncelleyebilirsiniz)
     step=0.05,
     format="%.2f",
     help="1 Doların TL cinsinden karşılığını girin."
