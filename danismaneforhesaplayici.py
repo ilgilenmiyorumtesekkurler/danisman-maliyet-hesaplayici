@@ -4,7 +4,7 @@ import streamlit as st
 TAM_GUN_SAAT = 7.5
 DAKIKA_BIR_SAATTE = 60
 
-# --- Web Uygulaması Arayüzü ---
+# --- Web Uygulama Arayüzü ---
 st.set_page_config(
     page_title="BilgiGEN Danışman Maliyet Hesaplayıcı",
     page_icon="✅",
@@ -40,7 +40,7 @@ st.header("2. Kur Bilgisi")
 dolar_kuru_tl = st.number_input(
     "Güncel Dolar Kuru (TL)",
     min_value=0.0,
-    value=39.34, # Varsayılan değer (güncel kura göre güncelleyebilirsiniz)
+    value=39.34, # Varsayılan değer (güncel kura göre güncelleyebileceğiniz alan burası)
     step=0.05,
     format="%.2f",
     help="1 Doların TL cinsinden karşılığını girin."
@@ -69,7 +69,7 @@ if st.button("Hesapla", type="primary"):
         st.write(f"**Adam Saat Maliyeti:** ${birim_saat_ucreti_dolar:.2f} / Saat")
 
 
-        col1, col2 = st.columns(2) # Sonuçları iki sütunda göstermek için
+        col1, col2 = st.columns(2) # Sonuçları iki sütunda göstermek için bu alanı ekledim
 
         with col1:
             st.metric(label="Toplam Adam Gün", value=f"{toplam_adam_gun:.2f} gün")
@@ -77,7 +77,7 @@ if st.button("Hesapla", type="primary"):
 
         with col2:
             st.metric(label="Toplam Maliyet (TL)", value=f"{toplam_maliyet_tl:.2f} TL")
-            # Güncel kur bilgisini de yanında gösterelim
+            # Güncel kur bilgisini de yanında gösteriyoruz.
             st.markdown(f"<small>(1 Dolar = {dolar_kuru_tl:.2f} TL üzerinden hesaplanmıştır)</small>", unsafe_allow_html=True)
 
         st.success("Hesaplama başarıyla tamamlanmıştır!")
